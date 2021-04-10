@@ -1,0 +1,11 @@
+{
+    "name": "steppy",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "vue serve",
+      "watch": "sass assets/css --watch"
+    }
+}
+
+
