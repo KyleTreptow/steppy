@@ -98,4 +98,12 @@ button.active {
   color: green;
 }
 
+.well {
+  background: #eee;
+  border: solid 1px #ddd;
+  font-size: 12px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
 /*# sourceMappingURL=main.css.map */
