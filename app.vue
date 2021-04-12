@@ -18,12 +18,14 @@
           <div class="panel" :class="{ before: step > 2, active: step == 2, after: step < 2 }">
             <h1>Step 2</h1>
             <RadioControl label="Car Make" inputName="car_make" :options="['Toyota', 'Ford', 'Chevy']" panel="2" />
+            <RadioControl label="School" inputName="school" :options="['CSUN', 'USC', 'UCLA', 'Other']" panel="2" />
             <button type="button" @click="step = 3">Next</button>
             <div class="well">Errors: {{ errors[2] }}</div>
           </div>
           <div class="panel" :class="{ before: step > 3, active: step == 3, after: step < 3 }">
             <h1>Step 3</h1>
             <CheckboxControl label="Colors" inputName="colors" :options="['Red', 'Blue', 'Green']" panel="3" />
+            <TextControl label="Nickname" inputName="nickname" placeholder="Chester" panel="3" />
             <button type="button" @click="step = 4">Next</button>
             <div class="well">Errors: {{ errors[3] }}</div>
           </div>

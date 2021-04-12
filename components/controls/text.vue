@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="control">
     <label :for="inputName">{{ label }}</label>
-    <input v-model="value" type="text" :name="inputName" :placeholder="placeholder" autocomplete="new-password">
+    <input v-model="value" type="text" :name="inputName" :placeholder="placeholder" autocomplete="off">
     <div class="flag" :class="{valid: valid}">
       {{ valid ? ('Valid: ' + value) : 'Invalid'}}
     </div>

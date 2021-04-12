@@ -26,8 +26,10 @@ header
 main
   padding: 0
   padding-top: 0
-  border: solid 1px red
+  border: solid 1px yellow
   position: relative
+  display: grid
+  grid-template-areas: 'main'
 
 button
   border: solid 1px #ddd
@@ -43,8 +45,7 @@ button
 
 .panel
   border: solid 1px #ddd
-  display: block
-  position: absolute
+  grid-area: main
   width: 100%
   padding: 30px
   transition: transform 0.3s ease-out, opacity 0.3s ease-out
@@ -85,5 +86,5 @@ button
   font-size: 12px
   padding: 10px 20px
   margin-top: 20px
-  
+
 //
