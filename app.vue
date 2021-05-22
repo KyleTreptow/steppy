@@ -2,10 +2,10 @@
     <div class="wrap">
       <form class="" action="/" method="post" autocomplete="off">
         <header>
-          <button type="button" :class="{ active: step == 1}" @click="step = 1">1</button>
-          <button type="button" :class="{ active: step == 2}" @click="step = 2">2</button>
-          <button type="button" :class="{ active: step == 3}" @click="step = 3">3</button>
-          <button type="button" :class="{ active: step == 4}" @click="step = 4">4</button>
+          <button type="button" :class="{ active: step == 1 }" @click="step = 1">1</button>
+          <button type="button" :class="{ active: step == 2 }" @click="step = 2">2</button>
+          <button type="button" :class="{ active: step == 3 }" @click="step = 3">3</button>
+          <button type="button" :class="{ active: step == 4 }" @click="step = 4">4</button>
         </header>
         <main>
           <div class="panel" :class="{ before: step > 1, active: step == 1, after: step < 1 }">
