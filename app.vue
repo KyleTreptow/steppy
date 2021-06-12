@@ -10,32 +10,15 @@
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
             <h1>{{ i.title }}</h1>
             <div v-for="input in i.inputs" :key="input.inputName">
-              <TextControl
-                v-if="input.type == 'text'"
+              <component :is="input.type"
                 :label="input.label"
                 :inputName="input.inputName"
                 :placeholder="input.placeholder"
-                :panel="index" />
-              <RadioControl
-                v-if="input.type == 'radio'"
-                :label="input.label"
-                :inputName="input.inputName"
                 :options="input.options"
-                :panel="index" />
-              <CheckboxControl
-                v-if="input.type == 'checkbox'"
-                :label="input.label"
-                :inputName="input.inputName"
-                :options="input.options"
-                :panel="index" />
-              <SelectControl
-                v-if="input.type == 'select'"
-                :label="input.label"
-                :inputName="input.inputName"
-                :options="input.options"
-                :panel="index" />
+                :panel="index"
+              />
             </div>
-            <button type="button" @click="step = index+2">Next</button>
+            <button type="button" @click="step = index+1">Next</button>
             <div class="well">Errors: {{ errors[index] }}</div>
           </div>
         </main>
@@ -58,13 +41,13 @@
               title: 'step 1',
               inputs: [
                 {
-                  type: 'text',
+                  type: 'TextControl',
                   label: 'First Name',
                   inputName: 'first_name',
                   placeholder: 'John'
                 },
                 {
-                  type: 'text',
+                  type: 'TextControl',
                   label: 'Last Name',
                   inputName: 'last_name',
                   placeholder: 'Doe'
@@ -75,13 +58,13 @@
               title: 'step 2',
               inputs: [
                 {
-                  type: 'radio',
+                  type: 'RadioControl',
                   label: 'Car Make',
                   inputName: 'car_name',
                   options: ['Toyota', 'Ford', 'Chevy']
                 },
                 {
-                  type: 'radio',
+                  type: 'RadioControl',
                   label: 'School',
                   inputName: 'school',
                   options: ['CSUN', 'USC', 'UCLA', 'Other']
@@ -92,13 +75,13 @@
               title: 'step 3',
               inputs: [
                 {
-                  type: 'checkbox',
+                  type: 'CheckboxControl',
                   label: 'Colors',
                   inputName: 'colors',
                   options: ['Red', 'Blue', 'Green']
                 },
                 {
-                  type: 'text',
+                  type: 'TextControl',
                   label: 'Nickname',
                   inputName: 'nickname',
                   placeholder: 'Chester'
@@ -109,7 +92,7 @@
               title: 'step 4',
               inputs: [
                 {
-                  type: 'select',
+                  type: 'SelectControl',
                   label: 'Shape',
                   inputName: 'shape',
                   options: ['Square', 'Circle', 'Triangle']
