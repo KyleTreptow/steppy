@@ -32,74 +32,12 @@
     import RadioControl from './components/controls/radio.vue'
     import CheckboxControl from './components/controls/checkbox.vue'
     import SelectControl from './components/controls/select.vue'
+    import appData from './appData.json'
     export default {
       components: { TextControl, RadioControl, CheckboxControl, SelectControl },
       data () {
         return {
-          panels: [
-            {
-              title: 'step 1',
-              inputs: [
-                {
-                  type: 'TextControl',
-                  label: 'First Name',
-                  inputName: 'first_name',
-                  placeholder: 'John'
-                },
-                {
-                  type: 'TextControl',
-                  label: 'Last Name',
-                  inputName: 'last_name',
-                  placeholder: 'Doe'
-                }
-              ]
-            },
-            {
-              title: 'step 2',
-              inputs: [
-                {
-                  type: 'RadioControl',
-                  label: 'Car Make',
-                  inputName: 'car_name',
-                  options: ['Toyota', 'Ford', 'Chevy']
-                },
-                {
-                  type: 'RadioControl',
-                  label: 'School',
-                  inputName: 'school',
-                  options: ['CSUN', 'USC', 'UCLA', 'Other']
-                }
-              ]
-            },
-            {
-              title: 'step 3',
-              inputs: [
-                {
-                  type: 'CheckboxControl',
-                  label: 'Colors',
-                  inputName: 'colors',
-                  options: ['Red', 'Blue', 'Green']
-                },
-                {
-                  type: 'TextControl',
-                  label: 'Nickname',
-                  inputName: 'nickname',
-                  placeholder: 'Chester'
-                }
-              ]
-            },
-            {
-              title: 'step 4',
-              inputs: [
-                {
-                  type: 'SelectControl',
-                  label: 'Shape',
-                  inputName: 'shape',
-                  options: ['Square', 'Circle', 'Triangle']
-                },
-              ]
-            }
-          ],
+          panels: appData.panels,
           step: 0,
           errors: {
             0: [], 1: [], 2: [], 3: []
@@ -110,7 +48,7 @@
         addErrorFlag (flag, panel) {
           if(!this.errors[panel].includes(flag)){
             this.errors[panel].push(flag)
-          }
+          }a
         },
         removeErrorFlag (flag, panel) {
           let filtered = this.errors[panel].filter(function(value){

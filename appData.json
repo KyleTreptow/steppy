@@ -1,0 +1,83 @@
+{
+    "panels":[
+       {
+          "title":"step 1",
+          "inputs":[
+             {
+                "type":"TextControl",
+                "label":"First Name",
+                "inputName":"first_name",
+                "placeholder":"John"
+             },
+             {
+                "type":"TextControl",
+                "label":"Last Name",
+                "inputName":"last_name",
+                "placeholder":"Doe"
+             }
+          ]
+       },
+       {
+          "title":"step 2",
+          "inputs":[
+             {
+                "type":"RadioControl",
+                "label":"Car Make",
+                "inputName":"car_name",
+                "options":[
+                   "Toyota",
+                   "Ford",
+                   "Chevy"
+                ]
+             },
+             {
+                "type":"RadioControl",
+                "label":"School",
+                "inputName":"school",
+                "options":[
+                   "CSUN",
+                   "USC",
+                   "UCLA",
+                   "Other"
+                ]
+             }
+          ]
+       },
+       {
+          "title":"step 3",
+          "inputs":[
+             {
+                "type":"CheckboxControl",
+                "label":"Colors",
+                "inputName":"colors",
+                "options":[
+                   "Red",
+                   "Blue",
+                   "Green"
+                ]
+             },
+             {
+                "type":"TextControl",
+                "label":"Nickname",
+                "inputName":"nickname",
+                "placeholder":"Chester"
+             }
+          ]
+       },
+       {
+          "title":"step 4",
+          "inputs":[
+             {
+                "type":"SelectControl",
+                "label":"Shape",
+                "inputName":"shape",
+                "options":[
+                   "Square",
+                   "Circle",
+                   "Triangle"
+                ]
+             }
+          ]
+       }
+    ]
+ }
