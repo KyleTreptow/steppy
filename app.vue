@@ -10,14 +10,30 @@
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
             <h1>{{ i.title }}</h1>
             <div v-for="input in i.inputs" :key="input.inputName">
-              <TextControl v-if="input.type == 'text'"
-              :label="input.label" :inputName="input.inputName" :placeholder="input.placeholder" :panel="index + 1" />
-              <RadioControl v-if="input.type == 'radio'"
-              :label="input.label" :inputName="input.inputName" :options="input.options" :panel="index + 1" />
-              <CheckboxControl v-if="input.type == 'checkbox'"
-              :label="input.label" :inputName="input.inputName" :options="input.options" :panel="index + 1" />
-              <SelectControl v-if="input.type == 'select'"
-              :label="input.label" :inputName="input.inputName" :options="input.options" :panel="index + 1" />
+              <TextControl
+                v-if="input.type == 'text'"
+                :label="input.label"
+                :inputName="input.inputName"
+                :placeholder="input.placeholder"
+                :panel="index + 1" />
+              <RadioControl
+                v-if="input.type == 'radio'"
+                :label="input.label"
+                :inputName="input.inputName"
+                :options="input.options"
+                :panel="index + 1" />
+              <CheckboxControl
+                v-if="input.type == 'checkbox'"
+                :label="input.label"
+                :inputName="input.inputName"
+                :options="input.options"
+                :panel="index + 1" />
+              <SelectControl
+                v-if="input.type == 'select'"
+                :label="input.label"
+                :inputName="input.inputName"
+                :options="input.options"
+                :panel="index + 1" />
             </div>
             <button type="button" @click="step = index+2">Next</button>
             <div class="well">Errors: {{ errors[index+1] }}</div>
