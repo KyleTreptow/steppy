@@ -15,28 +15,28 @@
                 :label="input.label"
                 :inputName="input.inputName"
                 :placeholder="input.placeholder"
-                :panel="index + 1" />
+                :panel="index" />
               <RadioControl
                 v-if="input.type == 'radio'"
                 :label="input.label"
                 :inputName="input.inputName"
                 :options="input.options"
-                :panel="index + 1" />
+                :panel="index" />
               <CheckboxControl
                 v-if="input.type == 'checkbox'"
                 :label="input.label"
                 :inputName="input.inputName"
                 :options="input.options"
-                :panel="index + 1" />
+                :panel="index" />
               <SelectControl
                 v-if="input.type == 'select'"
                 :label="input.label"
                 :inputName="input.inputName"
                 :options="input.options"
-                :panel="index + 1" />
+                :panel="index" />
             </div>
             <button type="button" @click="step = index+2">Next</button>
-            <div class="well">Errors: {{ errors[index+1] }}</div>
+            <div class="well">Errors: {{ errors[index] }}</div>
           </div>
         </main>
       </form>
@@ -119,7 +119,7 @@
           ],
           step: 0,
           errors: {
-            1: [], 2: [], 3: [], 4: []
+            0: [], 1: [], 2: [], 3: []
           }
         }
       },
