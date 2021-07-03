@@ -48,7 +48,7 @@
         addErrorFlag (flag, panel) {
           if(!this.errors[panel].includes(flag)){
             this.errors[panel].push(flag)
-          }a
+          }
         },
         removeErrorFlag (flag, panel) {
           let filtered = this.errors[panel].filter(function(value){
