@@ -66,8 +66,9 @@
           this.errors = e
         },
         nextPanel(panel){
-          if(this.errors[panel].length){
-            alert('Please fill in the fields')
+          let e = this.errors[panel].length
+          if(e){
+            alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
           } else {
             this.step = panel + 1
           }
