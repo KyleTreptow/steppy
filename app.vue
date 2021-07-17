@@ -18,8 +18,12 @@
                 :panel="index"
               />
             </div>
-            <button type="button" @click="step = index+1">Next</button>
-            <div class="well">Errors: {{ errors[index] }}</div>
+            <button type="button" @click="nextPanel(index)">Next</button>
+            <div class="well">Errors:
+              <ul>
+                <li v-for="error in errors[index]" :key="error">{{ error }}</li>
+              </ul>
+            </div>
           </div>
         </main>
       </form>
@@ -39,22 +43,34 @@
         return {
           panels: appData.panels,
           step: 0,
-          errors: {
-            0: [], 1: [], 2: [], 3: []
-          }
+          errors: appData.panels.map(function(){ return new Array(0) })
         }
       },
       methods: {
         addErrorFlag (flag, panel) {
-          if(!this.errors[panel].includes(flag)){
-            this.errors[panel].push(flag)
+          let e = this.errors
+          if(!e[panel].includes(flag)){
+            e[panel].push(flag)
           }
+          this.errors = []
+          this.errors = e
         },
         removeErrorFlag (flag, panel) {
+          console.log(this.errors)
           let filtered = this.errors[panel].filter(function(value){
             return value != flag;
           })
-          this.errors[panel] = filtered
+          let e = this.errors
+          this.errors = []
+          e[panel] = filtered
+          this.errors = e
+        },
+        nextPanel(panel){
+          if(this.errors[panel].length){
+            alert('Please fill in the fields')
+          } else {
+            this.step = panel + 1
+          }
         }
       }
     }
