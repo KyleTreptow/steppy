@@ -1,0 +1,18 @@
+// Mixins
+
+=trans($props...)
+  $transition: ()
+  @each $prop in $props
+    $transition: append( $transition, ($prop 0.3s ease-out), $separator: comma )
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -ms-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+=translate($x, $y)
+  -moz-transform: translate($x, $y)
+  -webkit-transform: translate($x, $y)
+  -o-transform: translate($x, $y)
+  -ms-transform: translate($x, $y)
+  transform: translate($x, $y)

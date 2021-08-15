@@ -1,27 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap')
-
-$purple: #69179d
-$blue: #3b25ae
-$pink: #ec1ca8
-$green: #1fd072
-
-// Mixins
-=trans($props...)
-  $transition: ()
-  @each $prop in $props
-    $transition: append( $transition, ($prop 0.3s ease-out), $separator: comma )
-  -webkit-transition: $transition
-  -moz-transition: $transition
-  -ms-transition: $transition
-  -o-transition: $transition
-  transition: $transition
-
-=translate($x, $y)
-  -moz-transform: translate($x, $y)
-  -webkit-transform: translate($x, $y)
-  -o-transform: translate($x, $y)
-  -ms-transform: translate($x, $y)
-  transform: translate($x, $y)
+@import './includes/_config.sass'
+@import './includes/_mixins.sass'
 
 
 html
