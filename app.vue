@@ -86,9 +86,10 @@
           this.errors = e
         },
         nextPanel(panel){
-          let e = this.errors[panel].length
-          if(e){
-            alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
+          let e = this.errors[panel]
+          if(e.length){
+            // alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
+            console.log(e)
           } else {
             this.step = panel + 1
           }

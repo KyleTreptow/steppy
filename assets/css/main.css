@@ -17,6 +17,7 @@ body {
   font-family: "Open Sans";
   background: #3b25ae;
   background: linear-gradient(90deg, #3b25ae 0%, #69179d 100%);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
