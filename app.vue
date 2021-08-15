@@ -15,7 +15,10 @@
           <div v-for="(i, index) in panels" :key="index+'_panel'"
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
           <header>
-            <h1>{{ i.title }}</h1>
+            <h1>
+              <!-- <span>{{ step + 1 }}</span> -->
+              {{ i.title }}
+            </h1>
           </header>
           <div class="panel__fields">
             <div v-for="input in i.inputs" :key="input.inputName">

@@ -50,12 +50,16 @@ main {
 }
 
 .panel {
+  -webkit-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   box-shadow: 0 0 10px 10px rgba(48, 30, 140, 0.35);
   background: #fff;
   border: solid 1px #ddd;
   grid-area: main;
   width: 100%;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 .panel.before {
   opacity: 0;
@@ -95,7 +99,7 @@ main {
   -webkit-appearance: none;
   color: #fff;
   background-color: #1fd072;
-  padding: 10px 30px;
+  padding: 12px 30px;
   border: 0;
   border-radius: 40px;
   text-transform: uppercase;
@@ -103,6 +107,13 @@ main {
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 0 0 2px #1cba66;
+  opacity: 0.9;
+}
+.panel footer button:focus {
+  outline: 0;
+}
+.panel footer button:hover {
+  opacity: 1;
 }
 
 .control {
@@ -122,13 +133,18 @@ main {
   margin-bottom: 4px;
 }
 .control input[type=text] {
+  -webkit-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  -moz-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  -ms-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
   appearance: none;
   -webkit-appearance: none;
   display: block;
   width: 100%;
   background-color: #fafafa;
   border: 0;
-  border-bottom: solid 3px #f263c3;
+  border-bottom: solid 3px #ab4ee5;
   padding: 10px 10px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -138,7 +154,7 @@ main {
 }
 .control input[type=text]:focus {
   outline: 0;
-  border-bottom-color: #5f48d8;
+  border-bottom-color: #3b25ae;
   background-color: #fff;
 }
 .control input[type=text]::placeholder {
@@ -178,7 +194,7 @@ main {
   color: #fff;
   font-style: italic;
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.65;
   color: #79ccf7;
 }
 
