@@ -1,7 +1,7 @@
 {
     "panels":[
        {
-          "title":"step 1",
+          "title":"Step 1 Header",
           "inputs":[
              {
                 "type":"TextControl",
@@ -18,7 +18,7 @@
           ]
        },
        {
-          "title":"step 2",
+          "title":"Step 2 Header",
           "inputs":[
              {
                 "type":"RadioControl",
@@ -44,7 +44,7 @@
           ]
        },
        {
-          "title":"step 3",
+          "title":"Step 3 Header",
           "inputs":[
              {
                 "type":"CheckboxControl",
@@ -65,7 +65,7 @@
           ]
        },
        {
-          "title":"step 4",
+          "title":"Step 4 Header",
           "inputs":[
              {
                 "type":"SelectControl",

@@ -1,5 +1,9 @@
 <template>
     <div class="wrap">
+      <div class="progress">
+        Progress:
+        <b>{{ progress }}</b> (Step {{ step + 1 }} of {{ panels.length }})
+      </div>
       <form class="" action="/" method="post" autocomplete="off">
         <header>
           <button v-for="(i, index) in panels" :key="index+'_button'"
@@ -44,6 +48,11 @@
           panels: appData.panels,
           step: 0,
           errors: appData.panels.map(function(){ return new Array(0) })
+        }
+      },
+      computed: {
+        progress () {
+          return ((this.step +1 ) / this.panels.length) * 100 + '%'
         }
       },
       methods: {
