@@ -1,18 +1,23 @@
 <template>
     <div class="wrap">
-      <div class="progress">
-        Progress:
-        <b>{{ progress }}</b> (Step {{ step + 1 }} of {{ panels.length }})
-      </div>
       <form class="" action="/" method="post" autocomplete="off">
-        <header>
-          <button v-for="(i, index) in panels" :key="index+'_button'"
-          type="button" :class="{ active: step == index }" @click="step = index">{{ index + 1 }}</button>
+        <header class="header">
+          <div class="progress">
+            Progress:
+            <b>{{ progress }}</b> (Step {{ step + 1 }} of {{ panels.length }})
+          </div>
+          <div class="bubbles">
+            <button v-for="(i, index) in panels" :key="index+'_button'"
+            type="button" :class="{ active: step == index }" @click="step = index">{{ index + 1 }}</button>
+          </div>
         </header>
         <main>
           <div v-for="(i, index) in panels" :key="index+'_panel'"
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
+          <header>
             <h1>{{ i.title }}</h1>
+          </header>
+          <div class="panel__fields">
             <div v-for="input in i.inputs" :key="input.inputName">
               <component :is="input.type"
                 :label="input.label"
@@ -22,12 +27,15 @@
                 :panel="index"
               />
             </div>
-            <button type="button" @click="nextPanel(index)">Next</button>
+          </div>
+          <footer>
+            <button type="button" @click="nextPanel(index)" class="button">Next</button>
             <div class="well">Errors:
               <ul>
                 <li v-for="error in errors[index]" :key="error">{{ error }}</li>
               </ul>
             </div>
+          </footer>
           </div>
         </main>
       </form>

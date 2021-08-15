@@ -1,7 +1,7 @@
 {
     "panels":[
        {
-          "title":"Step 1 Header",
+          "title":"Personal Information",
           "inputs":[
              {
                 "type":"TextControl",
@@ -18,7 +18,7 @@
           ]
        },
        {
-          "title":"Step 2 Header",
+          "title":"Vehicle & Education",
           "inputs":[
              {
                 "type":"RadioControl",
@@ -44,7 +44,7 @@
           ]
        },
        {
-          "title":"Step 3 Header",
+          "title":"Additional Information",
           "inputs":[
              {
                 "type":"CheckboxControl",
@@ -65,7 +65,7 @@
           ]
        },
        {
-          "title":"Step 4 Header",
+          "title":"Geometry",
           "inputs":[
              {
                 "type":"SelectControl",
