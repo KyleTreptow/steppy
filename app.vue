@@ -88,7 +88,7 @@
         nextPanel(panel){
           let e = this.errors[panel]
           if(e.length){
-            // alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
+            alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
             console.log(e)
           } else {
             this.step = panel + 1
