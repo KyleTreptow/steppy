@@ -4,21 +4,18 @@
         <header class="header">
           <div class="progress">
             Progress:
-            <b>{{ progress }}</b> (Step {{ step + 1 }} of {{ panels.length }})
+            <b>{{ progress }}</b> (Step {{ step +1 }} of {{ panels.length }})
           </div>
           <div class="bubbles">
             <button v-for="(i, index) in panels" :key="index+'_button'"
-            type="button" :class="{ active: step == index }" @click="step = index">{{ index + 1 }}</button>
+            type="button" :class="{ active: step == index }" @click="step = index">{{ index +1 }}</button>
           </div>
         </header>
         <main>
           <div v-for="(i, index) in panels" :key="index+'_panel'"
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
           <header>
-            <h1>
-              <!-- <span>{{ step + 1 }}</span> -->
-              {{ i.title }}
-            </h1>
+            <h1>{{ i.title }}</h1>
           </header>
           <div class="panel__fields">
             <div v-for="input in i.inputs" :key="input.inputName">
@@ -28,6 +25,7 @@
                 :placeholder="input.placeholder"
                 :options="input.options"
                 :panel="index"
+                :flagged="(flags.includes(input.inputName) ? true : false)"
               />
             </div>
           </div>
@@ -58,7 +56,8 @@
         return {
           panels: appData.panels,
           step: 0,
-          errors: appData.panels.map(function(){ return new Array(0) })
+          errors: appData.panels.map(function(){ return new Array(0) }),
+          flags: []
         }
       },
       computed: {
@@ -67,6 +66,9 @@
         }
       },
       methods: {
+        log (data) {
+          console.log(data)
+        },
         addErrorFlag (flag, panel) {
           let e = this.errors
           if(!e[panel].includes(flag)){
@@ -88,10 +90,12 @@
         nextPanel(panel){
           let e = this.errors[panel]
           if(e.length){
-            alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
-            console.log(e)
+            // alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
+            // console.log(e)
+            this.flags = e
           } else {
             this.step = panel + 1
+            this.flags = []
           }
         }
       }

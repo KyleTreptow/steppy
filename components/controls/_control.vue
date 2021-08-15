@@ -1,9 +1,10 @@
 <script>
   export default {
-    props: ['label', 'inputName', 'placeholder', 'options', 'panel'],
+    props: ['label', 'inputName', 'placeholder', 'options', 'panel', 'flagged'],
     data () {
       return {
-        value: ''
+        value: '',
+        focused: false
       }
     },
     computed: {
