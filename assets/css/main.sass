@@ -53,7 +53,7 @@ main
 
 .panel
   +trans(transform, opacity)
-  box-shadow: 0 0 10px 10px transparentize(darken($blue, 10%), 0.8)
+  box-shadow: 0 0 10px 10px transparentize(darken($blue, 25%), 0.8)
   background: #fff
   border: solid 1px #ddd
   grid-area: main
@@ -83,6 +83,7 @@ main
     padding: 10px 30px 10px 30px
     text-align: center
     button
+      +trans(opacity, transform)
       display: block
       width: 100%
       appearance: none
@@ -97,11 +98,13 @@ main
       font-weight: bold
       letter-spacing: 2px
       text-shadow: 0 0 2px darken($green, 5%)
-      opacity: 0.9
-      &:focus
-        outline: 0
+      opacity: 0.8
+      +scale(1,1)
+      &:focus,
       &:hover
+        outline: 0
         opacity: 1
+        +scale(1.025,1.025)
 
 //////////////////////////////////////////
 // CONTROL
@@ -239,15 +242,6 @@ main
 
 
 
-
-.well
-  display: none
-  background: #eee
-  border: solid 1px #ddd
-  font-size: 12px
-  padding: 10px 20px
-  margin-top: 20px
-
 .progress
   display: block
   text-align: center
@@ -264,6 +258,7 @@ main
   text-align: center
   padding-top: 10px
   button
+    +trans(color, background-color)
     display: inline-block
     appearance: none
     -webkit-appearance: none

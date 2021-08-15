@@ -56,7 +56,7 @@ main {
   -ms-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   -o-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  box-shadow: 0 0 10px 10px rgba(45, 28, 132, 0.2);
+  box-shadow: 0 0 10px 10px rgba(23, 15, 69, 0.2);
   background: #fff;
   border: solid 1px #ddd;
   grid-area: main;
@@ -94,6 +94,11 @@ main {
   text-align: center;
 }
 .panel footer button {
+  -webkit-transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   display: block;
   width: 100%;
   appearance: none;
@@ -108,13 +113,21 @@ main {
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 0 0 2px #1cba66;
-  opacity: 0.9;
+  opacity: 0.8;
+  -moz-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
-.panel footer button:focus {
+.panel footer button:focus, .panel footer button:hover {
   outline: 0;
-}
-.panel footer button:hover {
   opacity: 1;
+  -moz-transform: scale(1.025, 1.025);
+  -webkit-transform: scale(1.025, 1.025);
+  -o-transform: scale(1.025, 1.025);
+  -ms-transform: scale(1.025, 1.025);
+  transform: scale(1.025, 1.025);
 }
 
 .control {
@@ -308,15 +321,6 @@ main {
   padding-left: 3px;
 }
 
-.well {
-  display: none;
-  background: #eee;
-  border: solid 1px #ddd;
-  font-size: 12px;
-  padding: 10px 20px;
-  margin-top: 20px;
-}
-
 .progress {
   display: block;
   text-align: center;
@@ -335,6 +339,11 @@ main {
   padding-top: 10px;
 }
 .bubbles button {
+  -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
   display: inline-block;
   appearance: none;
   -webkit-appearance: none;

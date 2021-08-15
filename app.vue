@@ -4,7 +4,9 @@
         <header class="header">
           <div class="progress">
             Progress:
-            <b>{{ progress }}</b> (Step {{ step +1 }} of {{ panels.length }})
+            <b>{{ progress }}</b>
+            (Step {{ step +1 }} of
+            {{ panels.length }})
           </div>
           <div class="bubbles">
             <button v-for="(i, index) in panels" :key="index+'_button'"
@@ -31,11 +33,6 @@
           </div>
           <footer>
             <button type="button" @click="nextPanel(index)" class="button">Next</button>
-            <div class="well">Errors:
-              <ul>
-                <li v-for="error in errors[index]" :key="error">{{ error }}</li>
-              </ul>
-            </div>
           </footer>
           </div>
         </main>
@@ -90,8 +87,6 @@
         nextPanel(panel){
           let e = this.errors[panel]
           if(e.length){
-            // alert('Errors on '+e+ ' field'+(e > 1 ? 's' : ''))
-            // console.log(e)
             this.flags = e
           } else {
             this.step = panel + 1
