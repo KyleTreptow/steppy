@@ -1,8 +1,11 @@
 <template lang="html">
   <div class="control control--text" :state="inputState">
+    <div class="control__tooltip">
+      {{ tooltip }}
+    </div>
     <label :for="inputName">{{ label }}</label>
     <div class="control__icons">
-      <i v-for=" (icon, index) in icons" :type="icon"></i>
+      <i v-for=" (icon, index) in icons" :type="icon" :key="icon+'-'+index"></i>
     </div>
     <input v-model="value"
       type="text"

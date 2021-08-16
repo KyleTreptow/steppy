@@ -4,7 +4,8 @@
     data () {
       return {
         value: '',
-        focused: false
+        focused: false,
+        tooltip: 'Field cannot be blank'
       }
     },
     computed: {

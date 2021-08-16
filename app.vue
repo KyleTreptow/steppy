@@ -21,7 +21,10 @@
             <h1>{{ i.title }}</h1>
           </header>
           <div class="panel__fields">
-            <div v-for="input in i.inputs" :key="input.inputName" class="panel__cell" :class="{'panel__cell--full': (input.width == 2) }">
+            <div v-for="input in i.inputs"
+              :key="input.inputName"
+              class="panel__cell"
+              :class="{'panel__cell--full': (input.width == 2) }" >
               <component :is="input.type"
                 :label="input.label"
                 :inputName="input.inputName"

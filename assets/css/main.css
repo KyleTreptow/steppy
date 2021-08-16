@@ -52,9 +52,11 @@ main {
 }
 
 .control {
-  margin-bottom: 10px;
+  position: relative;
 }
 .control > label {
+  position: relative;
+  z-index: 50;
   display: block;
   font-size: 11px;
   margin-bottom: 4px;
@@ -65,12 +67,13 @@ main {
 }
 .control input,
 .control select {
+  position: relative;
+  z-index: 10;
   margin-bottom: 4px;
   font-size: 14px;
 }
 .control--text {
   position: relative;
-  z-index: 0;
 }
 .control--text > label {
   -webkit-transition: color 0.3s ease-out;
@@ -107,6 +110,43 @@ main {
 }
 .control--text input::placeholder {
   color: #999;
+}
+.control__tooltip {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  position: absolute;
+  z-index: 100;
+  bottom: -32px;
+  left: 0;
+  width: auto;
+  max-width: 100%;
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: #fff;
+  background-color: #3b25ae;
+  box-shadow: 0 0 6px rgba(59, 37, 174, 0.25);
+  opacity: 0;
+  pointer-events: none;
+}
+.control__tooltip::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #3b25ae;
+  position: absolute;
+  top: -8px;
+  left: 10px;
+}
+.control[state=flagged]:hover .control__tooltip {
+  opacity: 1;
 }
 .control__icons {
   display: inline-block;
@@ -372,6 +412,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  margin-bottom: 20px;
 }
 .panel__cell--full {
   grid-column: span 2;
