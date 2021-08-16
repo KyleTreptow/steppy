@@ -24,6 +24,9 @@
     display: grid
     grid-template-columns: 1fr 1fr
     grid-gap: 30px
+  &__cell
+    &--full
+      grid-column: span 2
   header
     padding: 16px 30px 16px 30px
     margin-bottom: 20px
@@ -32,7 +35,7 @@
       margin: 0
       font-size: 21px
   footer
-    padding: 10px 30px 10px 30px
+    padding: 10px 30px 20px 30px
     text-align: center
     button
       +trans(transform)

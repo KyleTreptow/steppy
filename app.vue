@@ -21,7 +21,7 @@
             <h1>{{ i.title }}</h1>
           </header>
           <div class="panel__fields">
-            <div v-for="input in i.inputs" :key="input.inputName">
+            <div v-for="input in i.inputs" :key="input.inputName" class="panel__cell" :class="{'panel__cell--full': (input.width == 2) }">
               <component :is="input.type"
                 :label="input.label"
                 :inputName="input.inputName"
@@ -61,13 +61,13 @@
 <script>
     import('./assets/css/main.css');
     import TextControl from './components/controls/text.vue'
-    import Text4Control from './components/controls/text4.vue'
     import RadioControl from './components/controls/radio.vue'
     import CheckboxControl from './components/controls/checkbox.vue'
     import SelectControl from './components/controls/select.vue'
+    import EmailControl from './components/controls/text/email.vue'
     import appData from './appData.json'
     export default {
-      components: { TextControl, Text4Control, RadioControl, CheckboxControl, SelectControl },
+      components: { TextControl, RadioControl, CheckboxControl, SelectControl, EmailControl },
       data () {
         return {
           // Mount
@@ -84,6 +84,7 @@
       },
       mounted () {
         var self = this
+        this.log('App Mounted')
         setTimeout(function(){
           self.appReady = true
         }, 350)

@@ -268,13 +268,13 @@ main {
 .dev__toggle::after {
   content: "<log>";
 }
-.dev__toggle[state=active] {
-  color: #1fd072;
-}
 .dev__toggle:focus, .dev__toggle:active, .dev__toggle:hover {
   outline: 0;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.65);
+}
+.dev__toggle[state=active] {
+  color: #1fd072;
 }
 .dev__reset {
   -webkit-transition: opacity 0.3s ease-out;
@@ -373,6 +373,9 @@ main {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
+.panel__cell--full {
+  grid-column: span 2;
+}
 .panel header {
   padding: 16px 30px 16px 30px;
   margin-bottom: 20px;
@@ -383,7 +386,7 @@ main {
   font-size: 21px;
 }
 .panel footer {
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px 20px 30px;
   text-align: center;
 }
 .panel footer button {

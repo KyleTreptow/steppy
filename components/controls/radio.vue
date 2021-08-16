@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="control">
+  <div class="control control--full">
     <label :for="inputName">{{ label }}</label>
     <div class="options">
       <label v-for="option in options" :for="inputName+'_'+option" :key="option" class="option">

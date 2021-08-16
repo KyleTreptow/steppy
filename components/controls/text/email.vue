@@ -1,10 +1,10 @@
 <script>
-  import Text from './text.vue'
+  import Text from '../text.vue'
   export default {
     extends: Text,
     computed: {
       valid () {
-        return (this.value.length >= 4) ? true : false
+        return (/(.+)@(.+){2,}\.(.+){2,}/.test(this.value)) ? true : false
       }
     }
   }

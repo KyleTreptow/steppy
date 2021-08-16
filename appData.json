@@ -7,13 +7,22 @@
                 "type":"TextControl",
                 "label":"First Name",
                 "inputName":"first_name",
-                "placeholder":"John"
+                "placeholder":"John",
+                "width": 1
              },
              {
-                "type":"Text4Control",
+                "type":"TextControl",
                 "label":"Last Name",
                 "inputName":"last_name",
-                "placeholder":"Doe"
+                "placeholder":"Doe",
+                "width": 1
+             },
+             {
+                "type":"EmailControl",
+                "label":"Email",
+                "inputName":"email",
+                "placeholder":"john@doe.com",
+                "width": 2
              }
           ]
        },
@@ -28,7 +37,8 @@
                    "Toyota",
                    "Ford",
                    "Chevy"
-                ]
+                ],
+                "width": 1
              },
              {
                 "type":"RadioControl",
@@ -39,7 +49,8 @@
                    "USC",
                    "UCLA",
                    "Other"
-                ]
+                ],
+                "width": 1
              }
           ]
        },
@@ -54,13 +65,15 @@
                    "Red",
                    "Blue",
                    "Green"
-                ]
+                ],
+                "width": 1
              },
              {
                 "type":"TextControl",
                 "label":"Nickname",
                 "inputName":"nickname",
-                "placeholder":"Chester"
+                "placeholder":"Chester",
+                "width": 1
              }
           ]
        },
@@ -75,7 +88,8 @@
                    "Square",
                    "Circle",
                    "Triangle"
-                ]
+                ],
+                "width": 1
              }
           ]
        }

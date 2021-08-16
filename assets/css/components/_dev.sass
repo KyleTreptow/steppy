@@ -21,14 +21,14 @@
     margin-bottom: 6px
     &::after
       content: '<log>'
-    &[state="active"]
-      color: $green
     &:focus,
     &:active,
     &:hover
       outline: 0
       cursor: pointer
       color: transparentize(#fff, 0.35)
+    &[state="active"]
+      color: $green
   &__reset
     +trans(opacity)
     font-size: 12px
