@@ -10,7 +10,7 @@
                 "placeholder":"John"
              },
              {
-                "type":"TextControl",
+                "type":"Text4Control",
                 "label":"Last Name",
                 "inputName":"last_name",
                 "placeholder":"Doe"

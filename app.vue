@@ -1,18 +1,19 @@
 <template>
-    <div class="wrap">
+  <div class="app">
+    <div class="app__wrap" v-if="!appReady">
+      <div class="spinner">Loading...</div>
+    </div>
+    <div class="app__wrap" v-if="appReady">
       <form class="" action="/" method="post" autocomplete="off">
-        <header class="header">
-          <div class="progress">
-            Progress:
-            <b>{{ progress }}</b>
-            (Step {{ step +1 }} of
-            {{ panels.length }})
+        <div class="progress">
+          <div class="progress__text">
+            Progress: <b>{{ progress }}</b> (Step {{ step +1 }} of {{ panels.length }})
           </div>
-          <div class="bubbles">
+          <div class="progress__bubbles">
             <button v-for="(i, index) in panels" :key="index+'_button'"
             type="button" :class="{ active: step == index }" @click="step = index">{{ index +1 }}</button>
           </div>
-        </header>
+        </div>
         <main>
           <div v-for="(i, index) in panels" :key="index+'_panel'"
           class="panel" :class="{ before: step > index, active: step == index, after: step < index }">
@@ -35,27 +36,57 @@
             <button type="button" @click="nextPanel(index)" class="button">Next</button>
           </footer>
           </div>
+          <div class="dev">
+            <button class="dev__toggle"
+              :state="showDev ? 'active' : ''"
+              type="button"
+              @click="showDev = !showDev">
+            </button>
+            <div class="dev__log" v-if="showDev">
+              <ul>
+                <li v-for="(log, index) in devlog" :key="index+'_log'">
+                  {{ log }}
+                  <button type="button" @click="deleteDevLog(index)">x</button>
+                </li>
+              </ul>
+              <button class="dev__reset" type="button" @click="devlog = []">Clear All</button>
+            </div>
+          </div>
         </main>
       </form>
     </div>
+  </div>
 </template>
 
 <script>
     import('./assets/css/main.css');
     import TextControl from './components/controls/text.vue'
+    import Text4Control from './components/controls/text4.vue'
     import RadioControl from './components/controls/radio.vue'
     import CheckboxControl from './components/controls/checkbox.vue'
     import SelectControl from './components/controls/select.vue'
     import appData from './appData.json'
     export default {
-      components: { TextControl, RadioControl, CheckboxControl, SelectControl },
+      components: { TextControl, Text4Control, RadioControl, CheckboxControl, SelectControl },
       data () {
         return {
+          // Mount
+          appReady: false,
+          // Steps
           panels: appData.panels,
           step: 0,
           errors: appData.panels.map(function(){ return new Array(0) }),
-          flags: []
+          flags: [],
+          // Dev
+          showDev: false,
+          devlog: []
         }
+      },
+      mounted () {
+        var self = this
+        setTimeout(function(){
+          self.appReady = true
+        }, 350)
       },
       computed: {
         progress () {
@@ -64,7 +95,11 @@
       },
       methods: {
         log (data) {
+          this.devlog.push(data)
           console.log(data)
+        },
+        deleteDevLog (index){
+          this.devlog.splice(index, 1)
         },
         addErrorFlag (flag, panel) {
           let e = this.errors
@@ -88,6 +123,7 @@
           let e = this.errors[panel]
           if(e.length){
             this.flags = e
+            this.log('Errors on Fields: '+e)
           } else {
             this.step = panel + 1
             this.flags = []

@@ -1,17 +1,16 @@
+// IMPORTS
 @import './includes/_config.sass'
 @import './includes/_mixins.sass'
 
-
-html
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
-
+// RESET / GLOBAL
 *, *:before, *:after
   -webkit-box-sizing: inherit
   -moz-box-sizing: inherit
   box-sizing: inherit
-
+html
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 body
   margin: 0
   padding: 0
@@ -19,20 +18,14 @@ body
   background: $blue
   background: linear-gradient(90deg, $blue 0%, $purple 100%)
   overflow-x: hidden
-
 h1, h2, h3, h4, h5, h6
   font-weight: 600
   margin: 0
   margin-bottom: 20px
   color: $blue
-
 button
   &:hover
     cursor: pointer
-
-.header
-  padding: 20px 0
-
 main
   padding: 0
   padding-top: 0
@@ -40,240 +33,10 @@ main
   display: grid
   grid-template-areas: 'main'
 
-.wrap
-  display: block
-  width: 460px
-  max-width: 100%
-  margin: auto
-
-
-//////////////////////////////////////////
-// PANEL
-//////////////////////////////////////////
-
-.panel
-  +trans(transform, opacity)
-  box-shadow: 0 0 10px 10px transparentize(darken($blue, 25%), 0.8)
-  background: #fff
-  border: solid 1px #ddd
-  grid-area: main
-  width: 100%
-  &.before
-    opacity: 0
-    transform: translate(-100%, 0)
-  &.active
-    opacity: 1
-    transform: translate(0, 0)
-  &.after
-    opacity: 0
-    transform: translate(100%, 0)
-  &__fields
-    padding: 0 30px
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-gap: 30px
-  header
-    padding: 16px 30px 16px 30px
-    margin-bottom: 20px
-    border-bottom: solid 1px lighten($blue, 55%)
-    h1, h2, h3, h4, h5, h6
-      margin: 0
-      font-size: 21px
-  footer
-    padding: 10px 30px 10px 30px
-    text-align: center
-    button
-      +trans(opacity, transform)
-      display: block
-      width: 100%
-      appearance: none
-      -webkit-appearance: none
-      color: #fff
-      background-color: $green
-      padding: 12px 30px
-      border: 0
-      border-radius: 40px
-      text-transform: uppercase
-      font-size: 18px
-      font-weight: bold
-      letter-spacing: 2px
-      text-shadow: 0 0 2px darken($green, 5%)
-      opacity: 0.8
-      +scale(1,1)
-      &:focus,
-      &:hover
-        outline: 0
-        opacity: 1
-        +scale(1.025,1.025)
-
-//////////////////////////////////////////
-// CONTROL
-//////////////////////////////////////////
-
-.control
-  margin-bottom: 10px
-  > label
-    display: block
-    font-size: 11px
-    margin-bottom: 4px
-    font-weight: 700
-    color: lighten($blue, 30%)
-    color: $blue
-    text-transform: uppercase
-  input,
-  select
-    margin-bottom: 4px
-    font-size: 14px
-  // Text Input
-  &.mod--text
-    position: relative
-    z-index: 0
-    > label
-      +trans(color)
-      display: inline-block
-      padding: 0 6px
-      background: #fff
-      position: absolute
-      top: -7px
-      left: 10px
-  input[type="text"]
-    +trans(border-color)
-    appearance: none
-    -webkit-appearance: none
-    display: block
-    width: 100%
-    background-color: #fff
-    border: 0
-    border: solid 2px lighten($blue, 30%)
-    border: solid 2px $blue
-    padding: 14px 12px
-    border-radius: 6px
-    &:focus
-      outline: 0
-    &::placeholder
-      color: #999
-  .icons
-    display: inline-block
-    position: absolute
-    top: 0
-    right: 0
-    width: 40px
-    height: 100%
-    overflow: hidden
-  .icon
-    +trans(opacity, transform)
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-size: 14px 14px
-    background-repeat: no-repeat
-    background-position: center
-    &--alert
-      background-image: url('../img/icons/alert.svg')
-      opacity: 0
-      +translate(100%, 0)
-    &--check
-      background-image: url('../img/icons/check.svg')
-      opacity: 0
-      +translate(100%, 0)
-    &--edit
-      background-image: url('../img/icons/edit.svg')
-      opacity: 1
-      +translate(0, 0)
-  &.state--focused
-    > label
-      color: lighten($purple, 25%)
-      opacity: 1
-    input[type="text"]
-      border-color: lighten($purple, 25%)
-      border-radius: 6px
-    .icon--alert,
-    .icon--check,
-    .icon--edit
-      opacity: 0
-      +translate(100%, 0)
-  &.state--valid
-    > label
-      color: $green
-      opacity: 1
-    input[type="text"]
-      border-color: $green
-      border-radius: 6px
-    .icon--alert,
-    .icon--edit
-      opacity: 0
-      +translate(100%, 0)
-    .icon--check
-      opacity: 1
-      +translate(0, 0)
-  &.state--flagged
-    > label
-      color: $pink
-      opacity: 1
-    input[type="text"]
-      border-color: $pink
-      border-radius: 6px
-    .icon--edit,
-    .icon--check
-      opacity: 0
-      +translate(100%, 0)
-    .icon--alert
-      opacity: 1
-      +translate(0, 0)
-  // Radio & Checkbox
-  .options
-    display: grid
-    grid-template-columns: 1fr 1fr
-    .option
-      display: block
-      margin-right: 15px
-      span
-        display: inline-block
-        color: #666
-        font-size: 14px
-        padding-left: 3px
-
-
-
-
-
-
-
-
-.progress
-  display: block
-  text-align: center
-  padding-top: 20px
-  margin-bottom: 10px
-  color: #fff
-  font-style: italic
-  font-size: 14px
-  opacity: 0.7
-  color: #79ccf7
-
-.bubbles
-  display: block
-  text-align: center
-  padding-top: 10px
-  button
-    +trans(color, background-color)
-    display: inline-block
-    appearance: none
-    -webkit-appearance: none
-    background: transparent
-    color: #fff
-    border: solid 2px #fff
-    border-radius: 100%
-    height: 30px
-    width: 30px
-    margin: 0 6px
-    font-weight: bold
-    &.active
-      background: #fff
-      color: $blue
-
-// test
-.test
-  color: red
+// COMPONENTS
+@import './components/_app.sass'
+@import './components/_control.sass'
+@import './components/_dev.sass'
+@import './components/_panel.sass'
+@import './components/_progress.sass'
+@import './components/_spinner.sass'
