@@ -67,10 +67,11 @@
     import RadioControl from './components/controls/radio.vue'
     import CheckboxControl from './components/controls/checkbox.vue'
     import SelectControl from './components/controls/select.vue'
+    import SliderControl from './components/controls/slider.vue'
     import EmailControl from './components/controls/text/email.vue'
     import appData from './appData.json'
     export default {
-      components: { TextControl, RadioControl, CheckboxControl, SelectControl, EmailControl },
+      components: { TextControl, RadioControl, CheckboxControl, SelectControl, EmailControl, SliderControl },
       data () {
         return {
           // Mount
@@ -82,7 +83,9 @@
           flags: [],
           // Dev
           showDev: false,
-          devlog: []
+          devlog: [],
+          // Slider
+          slider: 10
         }
       },
       mounted () {

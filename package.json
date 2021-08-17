@@ -3,9 +3,10 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-      "start": "vue serve",
-      "watch": "sass assets/css --watch"
+        "start": "vue serve",
+        "watch": "sass assets/css --watch"
+    },
+    "dependencies": {
+        "vue-slider-component": "^3.2.14"
     }
 }
-
-
