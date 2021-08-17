@@ -36,9 +36,10 @@
                 "options":[
                    "Toyota",
                    "Ford",
-                   "Chevy"
+                   "Chevy",
+                   "Fiat"
                 ],
-                "width": 1
+                "width": 2
              },
              {
                 "type":"RadioControl",
@@ -50,7 +51,7 @@
                    "UCLA",
                    "Other"
                 ],
-                "width": 1
+                "width": 2
              }
           ]
        },
@@ -66,7 +67,7 @@
                    "Blue",
                    "Green"
                 ],
-                "width": 1
+                "width": 2
              },
              {
                 "type":"TextControl",
@@ -87,7 +88,9 @@
                 "options":[
                    "Square",
                    "Circle",
-                   "Triangle"
+                   "Triangle",
+                   "Rhombus",
+                   "Tetrahedron"
                 ],
                 "width": 1
              }

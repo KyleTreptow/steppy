@@ -2,7 +2,7 @@
   <div class="control">
     <label :for="inputName">{{ label }}</label>
     <select v-model="value" :name="inputName">
-      <option value="">- Select Option -</option>
+      <option value="">Select</option>
       <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
     </select>
     <!-- <div class="flag" :class="{valid: valid}">

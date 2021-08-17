@@ -72,6 +72,19 @@ main {
   margin-bottom: 4px;
   font-size: 14px;
 }
+.control select {
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+  padding: 14px 12px;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  border: solid 2px #3b25ae;
+  color: #666;
+}
 .control--text {
   position: relative;
 }
@@ -99,8 +112,6 @@ main {
   display: block;
   width: 100%;
   background-color: #fff;
-  border: 0;
-  border: solid 2px #9687e5;
   border: solid 2px #3b25ae;
   padding: 14px 12px;
   border-radius: 6px;
@@ -151,6 +162,7 @@ main {
 .control__icons {
   display: inline-block;
   position: absolute;
+  z-index: 100;
   top: 0;
   right: 0;
   width: 40px;
@@ -268,12 +280,10 @@ main {
   transform: translate(0, 0);
 }
 .control .options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
 }
 .control .options .option {
-  display: block;
-  margin-right: 15px;
+  display: inline-block;
 }
 .control .options .option span {
   display: inline-block;

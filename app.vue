@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div class="app">
     <div class="app__wrap" v-if="!appReady">
       <div class="spinner">Loading...</div>
