@@ -55,6 +55,11 @@
               <button class="dev__reset" type="button" @click="devlog = []">Clear All</button>
             </div>
           </div>
+          <v-slider
+            hint="Im a hint"
+            max="50"
+            min="-50"
+          ></v-slider>
         </main>
       </form>
     </div>
