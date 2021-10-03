@@ -10,11 +10,11 @@
     <input v-model="value"
       type="text"
       :id="inputName"
-      :name="inputName"
+      :name="inputName + '_test'"
       :placeholder="placeholder"
       @focus="focused = true"
       @blur="focused = false"
-      autocomplete="off" >
+      autocomplete="no" >
   </div>
 </template>
 

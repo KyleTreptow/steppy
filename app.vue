@@ -5,6 +5,7 @@
     </div>
     <div class="app__wrap" v-if="appReady">
       <form class="" action="/" method="post" autocomplete="off">
+        <input name="hidden" autocomplete="false" type="text" style="display:none;">
         <div class="progress">
           <div class="progress__text">
             Progress: <b>{{ progress }}</b> (Step {{ step +1 }} of {{ panels.length }})

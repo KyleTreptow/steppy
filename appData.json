@@ -23,15 +23,20 @@
                 "inputName":"email",
                 "placeholder":"john@doe.com",
                 "width": 2
-             },
-             {
-                "type":"SliderControl",
-                "label":"Slider Example",
-                "inputName":"slider",
-                "placeholder":"slider",
-                "width": 2
              }
           ]
+       },
+       {
+         "title":"Slider",
+         "inputs":[
+           {
+              "type":"SliderControl",
+              "label":"Slider Example",
+              "inputName":"slider",
+              "placeholder":"slider",
+              "width": 2
+           }
+         ]
        },
        {
           "title":"Vehicle & Education",
