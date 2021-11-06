@@ -7,9 +7,11 @@
         <span>{{ option }}</span>
       </label>
     </div>
-    <!-- <div class="flag" :class="{valid: valid}">
+    <!--
+    <div class="flag" :class="{valid: valid}">
       {{ valid ? ('Valid: ' + value) : 'Invalid'}}
-    </div> -->
+    </div> 
+    -->
   </div>
 </template>
 

@@ -10,7 +10,7 @@
     <input v-model="value"
       type="text"
       :id="inputName"
-      :name="inputName + '_test'"
+      :name="inputName + '_x'"
       :placeholder="placeholder"
       @focus="focused = true"
       @blur="focused = false"
